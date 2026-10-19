@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4ecd8">
+  <title>Gửi Tuyết Mai · 20/10</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Lớp phim: bụi, grain, vignette, light leak -->
+  <div class="film" aria-hidden="true">
+    <canvas id="dust"></canvas>
+    <div class="leak"></div>
+    <div class="grain"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <!-- Dải đen letterbox kiểu điện ảnh -->
+  <div class="bar bar-top" aria-hidden="true"></div>
+  <div class="bar bar-bottom" aria-hidden="true"></div>
+
+  <button type="button" id="soundBtn" class="sound" aria-label="Bật hoặc tắt nhạc" aria-pressed="true">♪</button>
+
+  <noscript>
+    <p style="padding:2rem;text-align:center">Trang này cần bật JavaScript để mở thư nhé.</p>
+  </noscript>
+
+  <main id="stage">
+
+    <!-- ===== MỞ ĐẦU: PHONG BÌ ===== -->
+    <section class="scene active" id="scene-envelope" aria-label="Phong bì">
+      <div class="inner">
+        <p class="env-kicker">một lá thư nhỏ · 20 · 10</p>
+        <p class="env-to">Gửi Tuyết Mai</p>
+
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Chạm để mở thư">
+          <div class="env-back"></div>
+          <div class="env-letter">
+            <span class="env-letter-top">gửi chàng eo sà của tớ :))</span>
+            <span class="env-letter-name">Tuyết Mai</span>
+          </div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="seal">B</div>
+        </div>
+
+        <p class="env-hint">chạm vào phong bì để mở</p>
+      </div>
+    </section>
+
+    <!-- ===== I. NGÀY ĐẦU TIÊN ===== -->
+    <section class="scene" id="s1" data-kind="story" aria-label="Ngày đầu tiên">
+      <div class="inner">
+        <figure class="illus">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Ô cửa sổ lớp học buổi sáng ngày nhập học">
+            <defs>
+              <linearGradient id="beam1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6d994" stop-opacity=".75"/>
+                <stop offset="1" stop-color="#f6d994" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <polygon points="140,70 260,70 380,285 20,285" fill="url(#beam1)"/>
+            <path d="M130 238V92a70 70 0 0 1 140 0v146z" fill="#fbf1d6" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M200 22v216M130 128h140M130 182h140" fill="none" stroke="currentColor" stroke-width="2"/>
+            <rect x="116" y="238" width="168" height="12" rx="2" fill="#e8d4a8" stroke="currentColor" stroke-width="2.5"/>
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M252 238c-2-14 0-24 6-34"/>
+              <path d="M258 204c-8-2-14-8-14-16 9 0 14 6 14 16z" fill="#c9d3a6" fill-opacity=".6"/>
+              <path d="M259 214c8-1 14-7 14-15-9 0-14 5-14 15z" fill="#c9d3a6" fill-opacity=".6"/>
+            </g>
+            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M40 262h90M60 262v22M110 262v22"/>
+              <path d="M270 262h90M290 262v22M340 262v22"/>
+            </g>
+            <path d="M62 262l8-12h40l8 12z" fill="#fbf1d6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path class="leaf" d="M205 60c8-8 18-6 22 2-8 6-18 6-22-2z" fill="#c9a869" opacity=".85"/>
+          </svg>
+        </figure>
+
+        <div class="copy">
+          <p class="chapter">I · ngày đầu tiên</p>
+          <p class="line" data-text="Chào chàng eo sà của tớ :))"></p>
+          <p class="line em" data-text="Tớ kể một chuyện nhỏ thôi, nghe xong cứ coi như chưa nghe nhé."></p>
+          <p class="line" data-text="Ngày đầu nhập học, giữa một lớp toàn người lạ, tớ đã để ý đến Tuyết Mai rồi."></p>
+          <p class="line" data-text="Không có lý do nào rõ ràng cả. Chỉ là có một sức hút nho nhỏ, khó gọi tên, mà đến giờ tớ vẫn chưa giải thích nổi."></p>
+          <button type="button" class="next" data-next>tiếp theo →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== II. MỘT CÁI BẤM NÚT ===== -->
+    <section class="scene" id="s2" data-kind="story" aria-label="Một cái bấm nút">
+      <div class="inner">
+        <figure class="illus">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Chiếc điện thoại với nút kết bạn đang run run">
+            <g>
+              <rect x="140" y="20" width="120" height="260" rx="20" fill="#fbf1d6" stroke="currentColor" stroke-width="3"/>
+              <rect x="150" y="38" width="100" height="224" rx="10" fill="#f6ead0"/>
+              <rect x="182" y="26" width="36" height="5" rx="2.5" fill="currentColor" opacity=".45"/>
+              <text x="200" y="62" text-anchor="middle" font-size="10" fill="currentColor" font-family="Lora, Georgia, serif">Nhóm lớp</text>
+              <circle cx="200" cy="112" r="26" fill="#e8d4a8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="200" cy="106" r="9" fill="currentColor" opacity=".5"/>
+              <path d="M182 133c4-13 32-13 36 0z" fill="currentColor" opacity=".5"/>
+              <text x="200" y="164" text-anchor="middle" font-size="12" fill="#3b2f24" font-family="Lora, Georgia, serif">Tuyết Mai</text>
+              <g class="tremble">
+                <rect x="158" y="186" width="84" height="26" rx="13" fill="#b5836a"/>
+                <text x="200" y="203" text-anchor="middle" font-size="10.5" fill="#fbf1d6" font-family="Lora, Georgia, serif">Kết bạn</text>
+              </g>
+              <rect x="170" y="228" width="60" height="6" rx="3" fill="currentColor" opacity=".18"/>
+            </g>
+            <g class="buzz" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".55">
+              <path d="M118 100c-6 8-6 20 0 28M106 92c-10 14-10 34 0 48"/>
+              <path d="M282 100c6 8 6 20 0 28M294 92c10 14 10 34 0 48"/>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="copy">
+          <p class="chapter">II · một cái bấm nút</p>
+          <p class="line" data-text="Rồi đến lúc phải kết bạn Zalo để kéo cậu vào nhóm lớp."></p>
+          <p class="line" data-text="Nghe thì chỉ là một việc rất bình thường. Vậy mà lúc bấm nút 'Kết bạn', tay tớ run thật sự. Run kinh khủng luôn :))"></p>
+          <p class="line em" data-text="Cậu chắc không biết đâu. Nhưng tớ nhớ rất rõ khoảnh khắc đó."></p>
+          <button type="button" class="next" data-next>tiếp theo →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== III. QUIZ ===== -->
+    <section class="scene" id="s3" data-kind="quiz" aria-label="Câu đố nhỏ">
+      <div class="inner inner-col">
+        <p class="chapter">III · chơi một chút</p>
+        <p class="line" data-text="Có ba câu hỏi nhỏ thôi. Không có đáp án nào bị tính là sai đâu, yên tâm nhé."></p>
+
+        <div class="quiz" id="quizBox">
+          <p class="q-count" id="qCount"></p>
+          <h3 class="q-text" id="qText"></h3>
+          <div class="q-opts" id="qOpts"></div>
+          <div class="q-feedback" id="qFeedback" aria-live="polite"></div>
+          <button type="button" class="next" id="qNext">câu tiếp theo →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IV. ĐIỀU QUÝ NHẤT ===== -->
+    <section class="scene" id="s4" data-kind="story" aria-label="Điều quý nhất">
+      <div class="inner">
+        <figure class="illus">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Cuốn sổ với danh sách việc đã được đánh dấu hoàn thành">
+            <g transform="rotate(-4 200 150)">
+              <rect x="100" y="30" width="200" height="250" rx="8" fill="#fbf1d6" stroke="currentColor" stroke-width="3"/>
+              <path d="M124 30v250" stroke="currentColor" stroke-width="2" opacity=".35"/>
+              <g fill="currentColor" opacity=".5">
+                <circle cx="100" cy="64" r="4"/><circle cx="100" cy="112" r="4"/>
+                <circle cx="100" cy="160" r="4"/><circle cx="100" cy="208" r="4"/><circle cx="100" cy="256" r="4"/>
+              </g>
+              <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="140" y="78" width="22" height="22" rx="4"/>
+                <path d="M176 90h96"/>
+                <rect x="140" y="130" width="22" height="22" rx="4"/>
+                <path d="M176 142h76"/>
+                <rect x="140" y="182" width="22" height="22" rx="4"/>
+                <path d="M176 194h88"/>
+                <rect x="140" y="234" width="22" height="22" rx="4"/>
+                <path d="M176 246h56"/>
+              </g>
+              <g fill="none" stroke="#7d8f5a" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+                <path class="tick" style="animation-delay:1.2s" d="M144 90l6 7 12-15"/>
+                <path class="tick" style="animation-delay:2.2s" d="M144 142l6 7 12-15"/>
+                <path class="tick" style="animation-delay:3.2s" d="M144 194l6 7 12-15"/>
+                <path class="tick" style="animation-delay:4.2s" d="M144 246l6 7 12-15"/>
+              </g>
+            </g>
+            <g transform="rotate(32 330 210)">
+              <rect x="322" y="140" width="14" height="96" rx="4" fill="#b5836a" stroke="currentColor" stroke-width="2"/>
+              <path d="M322 236l7 18 7-18z" fill="#fbf1d6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </figure>
+
+        <div class="copy">
+          <p class="chapter">IV · điều tớ quý nhất</p>
+          <p class="line" data-text="Điều tớ quý nhất ở cậu là sự trách nhiệm."></p>
+          <p class="line" data-text="Việc gì đã nhận thì cậu làm đến nơi đến chốn, không ồn ào, không kể công. Chỉ nhìn thôi cũng thấy cậu rất đáng tin."></p>
+          <p class="line em" data-text="Mà nói nhỏ nhé, lúc cậu nghiêm túc như vậy trông cũng cute lắm :))"></p>
+          <p class="line" data-text="Tớ chỉ có một điều ước bé xíu: cậu thân thiện với tớ hơn một chút. Một chút thôi cũng được."></p>
+          <button type="button" class="next" data-next>tiếp theo →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KẾT THÚC: LÁ THƯ ===== -->
+    <section class="scene" id="s5" data-kind="letter" aria-label="Lá thư">
+      <div class="inner inner-col">
+        <article class="paper">
+          <svg class="sprig" viewBox="0 0 120 60" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 40c30 10 70 10 100-6"/>
+              <path d="M40 44c-2-12 4-20 12-24 2 10-2 20-12 24zM68 46c0-12 8-18 16-20 0 10-6 18-16 20z" fill="currentColor" fill-opacity=".12"/>
+              <circle cx="96" cy="34" r="4" fill="#b5836a" stroke="none"/>
+            </g>
+          </svg>
+
+          <p class="line greet" data-text="Gửi chàng eo sà của tớ,"></p>
+          <p class="line" data-text="Nhân ngày 20/10, tớ không có gì to tát để tặng. Tớ chỉ muốn cậu biết rằng có một người đã để ý cậu từ ngày đầu tiên, và vẫn lặng lẽ quý cậu ở một góc nào đó trong lớp."></p>
+          <p class="line" data-text="Cảm ơn cậu vì đã là Tuyết Mai: chu đáo, đáng tin, và theo cách của riêng cậu, rất dễ thương."></p>
+          <p class="line" data-text="Chúc cậu một ngày 20/10 thật nhẹ nhàng, được nhiều người nhớ tới, được cười thật nhiều. Còn chuyện thân thiện với tớ hơn một chút thì... tớ vẫn đang chờ đó nhé :))"></p>
+
+          <p class="sign">Bình đây :))</p>
+          <p class="date">20 · 10 · 2026</p>
+        </article>
+
+        <div class="fin">
+          <p class="fin-text">Kỷ niệm nào rồi cũng bắt đầu từ một ngày rất bình thường.</p>
+          <button type="button" class="replay" id="replay">xem lại từ đầu</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
